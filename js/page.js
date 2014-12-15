@@ -12,6 +12,11 @@ function buildTabs()
 
 }
 
+function buildRepoListItem(name, content) 
+{
+    return '<div><span class="repo-list-item-label">' + name + ': </span><span class="repo-list-item-value">' + content + '</span></div>';
+}
+
 function buildCategories()
 {
     var content = "";
@@ -30,11 +35,10 @@ function buildCategories()
                 content += '<div class="repo-list-item-container">';
                 content += '<a href="'+ repos[repoName]['html_url']  + '" class="repo-list-item-anchor">'+ repoName.replace( /([a-z])([A-Z])/g, "$1 $2").replace( /[\-_]/g, " ") +'</a>';
                 content += '<div class="repo-list-item-description">' + repos[repoName].description+ '</div>'
-                content +='<div><span class="repo-list-item-label">Language: </span><span class="repo-list-item-value">' + repos[repoName].language+ '</span></div>';
-                content +='<div><span class="repo-list-item-label">Updated: </span><span class="repo-list-item-value">' + jQuery.format.prettyDate(repos[repoName].updated_at)+ '</span></div>';
-
-                content +='<div><span class="repo-list-item-label">Forks: </span><span class="repo-list-item-value">' + repos[repoName].forks+ '</span></div>';
-                content +='<div><span class="repo-list-item-label">Open Issues: </span><span class="repo-list-item-value">' + repos[repoName].open_issues+ '</span></div>';
+                content += buildRepoListItem("Language", repos[repoName].language);
+                content += buildRepoListItem("Updated", jQuery.format.prettyDate(repos[repoName].updated_at));
+                content += buildRepoListItem("Forks", repos[repoName].forks);
+                content += buildRepoListItem("Open Issues", repos[repoName].open_issues);
                 content +='</div>'
             }
         content += "</div>"
@@ -48,11 +52,11 @@ function buildCategories()
     });
 
 }
+
 var repos = {};
 
 $(function(){
     buildTabs();
-
 
     $.ajax({
         url: "https://api.github.com/orgs/interactiveintelligence/repos",
