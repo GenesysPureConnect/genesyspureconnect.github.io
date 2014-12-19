@@ -10,13 +10,13 @@
         width:85%;
         margin: 0px auto !important
     }
+
     .fixedWidth{
 
     }
 
     .header{
         margin-top: 10px;
-
     }
 
     #sub-header
@@ -30,11 +30,7 @@
         z-index: 100;
 
         background: #4c4c4c;
-
     }
-
-
-
 
     .sub-header-item
     {
@@ -74,7 +70,6 @@
         color: #eee;
     }
 
-
     #non-scrolling-section
     {
     /*    position: fixed;*/
@@ -85,8 +80,6 @@
 
     }
 
-
-
     #scrolling-section
     {
         position: relative;
@@ -94,18 +87,12 @@
 
         padding-top: 10px;
         bottom: 0;
-
     }
-
-
 
     .non-scrolling-sidebar
     {
         position: fixed;
-
-
     }
-
 
     body{
         font-family: Arial, Helvetica, sans-serif;
@@ -127,8 +114,6 @@
         font-weight: normal !important;
         margin:5px 0px;
     }
-
-
 
     .repo-list-item-container
     {
@@ -216,7 +201,6 @@
         background: url(../assets/background-column.png) left top repeat-y;
     }
 
-
     .nav-anchor:link, .nav-anchor:visited, .nav-anchor:active
     {
         text-decoration: none;
@@ -228,22 +212,47 @@
         line-height: 1.8em;
     }
 
-    #categoryList{
+    #categoryList {
         padding-left:10px;
     }
 
-    .category-anchor:link, .category-anchor:visited, .category-anchor:active{
+    .category-anchor:link, .category-anchor:visited, .category-anchor:active {
         text-decoration: none;
     }
 
-    label{
+    label {
         display:block;
         font-style:italic;
     }
 
+    .searchInput {
+        width:2 00px;
+        border: 2px solid #dadada;
+        border-radius: 7px;
+        font-size: 14px;
+        padding: 5px;
+        margin-top: -10px;    
+    }
+
+    .searchInput:focus { 
+        outline: none;
+        border-color: #CC9900;
+        box-shadow: 0px 0px 10px #B9090B;
+    }
+
+    .projectsHeader {
+        float: left;
+    }
+
+    .search {
+        float: left;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
     </style>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.dotdotdot.min.js"></script>
     <script type="text/javascript" src="js/jquery-dateFormat.min.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
@@ -258,12 +267,8 @@
             <div class="header-logo">
                 <a href="http://developer.inin.com"><img src="assets/logo.png" align="middle" alt="Interactive Intelligence" border="0"></a>
             </div>
-
         </div>
-        <div id="sub-header" class="bodyContainer">
-        </div>
-
-
+        <div id="sub-header" class="bodyContainer"></div>
     </div>
     <div id="scrolling-section" class='bodyContainer'>
         <div id="content-repos">
@@ -280,7 +285,14 @@
                     Community contributions to open source projects is strongly encouraged. First step is to get a free account on GitHub and become familiar with some of the basics of git. Next create a fork of the project you want to work on. GitHub has a good tutorial on <a href="https://help.github.com/articles/fork-a-repo">how to fork a repo</a>. Make any necessary changes in your repo and when you are ready to have those changes integrated back into the main repository, issue a pull request. GitHub again has a good tutorial on <a href="https://help.github.com/articles/creating-a-pull-request">how to create a pull request​</a>.
                 </p>
 
-                <h1>Projects</h1>
+                <div class = "projectsHeader">
+                    <h1>Projects</h1>
+                </div>
+
+                <div class = "search">
+                    <input class="searchInput" placeholder="Search Projects">
+                </div>
+                
                 <div id="categories"></div>
             </div>
         </div>
@@ -292,9 +304,6 @@
             <div id="categoryList" class="">
             </div>
         </div>
-
-
     </div>
-
 </body>
 </html>

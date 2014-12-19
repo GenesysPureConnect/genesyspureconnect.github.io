@@ -50,7 +50,21 @@ function buildCategories()
     $(".repo-list-item-description").dotdotdot({
 
     });
+}
 
+function filterList(text)
+{
+    var list = $('a.repo-list-item-anchor');
+
+    list.each(function() {
+        var containsSearchInput = $(this).text().toLowerCase().indexOf(text.toLowerCase()) >= 0;
+
+        if(containsSearchInput) {
+            $(this).parent().show();
+        } else {
+            $(this).parent().hide();
+        }
+    });
 }
 
 var repos = {};
@@ -68,5 +82,9 @@ $(function(){
             repos[data[x].name] = data[x];
         }
         buildCategories();
+    });
+
+    $('.searchInput').on('input', function() {
+        filterList($(this).val());
     });
 });
