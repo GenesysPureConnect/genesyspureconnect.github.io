@@ -32,6 +32,8 @@ function buildCategories()
         for ( var j = 0; j < categories[i].repos.length; ++j )
             {
                 var repoName = categories[i].repos[j];
+                if (typeof repos[repoName] == "undefined") continue;
+                
                 content += '<div class="repo-list-item-container">';
                 content += '<a href="'+ repos[repoName]['html_url']  + '" class="repo-list-item-anchor">'+ repoName.replace( /([a-z])([A-Z])/g, "$1 $2").replace( /[\-_]/g, " ") +'</a>';
                 content += '<div class="repo-list-item-description">' + repos[repoName].description+ '</div>'
