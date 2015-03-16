@@ -102,14 +102,14 @@
     h1{
         font-size: 28px !important;
         font-weight: normal !important;
-        color: #CC9900 !important;
+        color: #0e5470 !important;
         font-family: Arial, Helvetica, sans-serif !important;
     }
 
     h2
     {
         font-family: Arial, Helvetica, sans-serif;
-        color: #333333;
+        color: #65bccd;
         font-size: 28px !important;
         font-weight: normal !important;
         margin:5px 0px;
@@ -129,14 +129,14 @@
     }
 
     .repo-list-item-container:hover {
-        border-color: #CC9900;
-        box-shadow: 0px 0px 10px #B9090B;
+        border-color: #0e5470;
+        box-shadow: 0px 0px 10px #b11f24;
     }
 
     .repo-list-item-anchor:link, .repo-list-item-anchor:visited, .repo-list-item-anchor:active
     {
         text-decoration: none;
-        color: #CC9900;
+        color: #0e5470;
         font-weight: bold;
         text-transform: capitalize;
         font-size: 1.25em;
@@ -175,7 +175,7 @@
 
     .category {
         margin-bottom: 30px;
-        width:95%
+        width:90%
     }
 
     #content-repos {
@@ -201,10 +201,17 @@
         background: url(../assets/background-column.png) left top repeat-y;
     }
 
+    #logo{
+        background: url(../assets/logo.png) left top repeat-y;
+        height: 50px;
+        width: 450px;
+    }
+
+
     .nav-anchor:link, .nav-anchor:visited, .nav-anchor:active
     {
         text-decoration: none;
-        color: #CC9900;
+        color: #0e5470;
         font-weight: bold;
         text-transform: capitalize;
         font-size: 1.25em;
@@ -236,7 +243,7 @@
 
     .searchInput:focus {
         outline: none;
-        border-color: #CC9900;
+        border-color: #0e5470;
         box-shadow: 0px 0px 10px #B9090B;
     }
 
@@ -250,9 +257,42 @@
         margin-top: 30px;
     }
 
+    @media screen and (min-width: 1050px) {
+        .category {
+            width:95%
+        }
+
+    }
+    @media screen and (min-width: 1400px) {
+        .category {
+            width:90%
+        }
+    }
+
+    @media screen and (max-width: 1050px) {
+        .non-scrolling-sidebar {
+            display:none
+        }
+
+        #scrolling-section{
+            background:url()
+        }
+
+        .bodyContainer{
+            margin: 0px 0px !important
+            width:100%;
+        }
+
+
+        #content-repos{
+            min-width:100px;
+            width:90%;
+        }
+    }
+
     </style>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.dotdotdot.min.js"></script>
     <script type="text/javascript" src="js/jquery-dateFormat.min.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
@@ -265,7 +305,7 @@
     <div id="non-scrolling-section">
         <div class="bodyContainer header">
             <div class="header-logo">
-                <a href="http://developer.inin.com"><img src="assets/logo.png" align="middle" alt="Interactive Intelligence" border="0"></a>
+                <a href="http://developer.inin.com"><div id='logo'></div></a>
             </div>
         </div>
         <div id="sub-header" class="bodyContainer"></div>
