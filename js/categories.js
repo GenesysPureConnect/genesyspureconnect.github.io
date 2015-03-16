@@ -30,6 +30,7 @@ var categories = [
         'MSCRM-PhoneNumberSanitizer',
         "InteractionAttributeViewer",
         "TelUriRepair",
+        'sip_stack_verification',
         ]
     },
 
