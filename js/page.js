@@ -12,7 +12,7 @@ function buildTabs()
 
 }
 
-function buildRepoListItem(name, content) 
+function buildRepoListItem(name, content)
 {
     return '<div><span class="repo-list-item-label">' + name + ': </span><span class="repo-list-item-value">' + content + '</span></div>';
 }
@@ -20,7 +20,7 @@ function buildRepoListItem(name, content)
 function buildCategories()
 {
     var content = "";
-    var toc = "<h2>Categories</h2><ul>";
+    var toc = "<ul>";
     for ( var i = 0; i < categories.length; ++i )
     {
         content += "<div class='category'>"
@@ -33,7 +33,7 @@ function buildCategories()
             {
                 var repoName = categories[i].repos[j];
                 if (typeof repos[repoName] == "undefined") continue;
-                
+
                 content += '<div class="repo-list-item-container">';
                 content += '<a href="'+ repos[repoName]['html_url']  + '" class="repo-list-item-anchor">'+ repoName.replace( /([a-z])([A-Z])/g, "$1 $2").replace( /[\-_]/g, " ") +'</a>';
                 content += '<div class="repo-list-item-description">' + repos[repoName].description+ '</div>'

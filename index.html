@@ -1,349 +1,242 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Interactive Intelligence Open Source Software</title>
+    <title>Genesys Open Source Software</title>
 
     <style>
-    .bodyContainer{
-        width:85%;
-        margin: 0px auto !important
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            margin: 0;
+        }
 
-    .fixedWidth{
+        .header-logo {
+            margin-top: 16px;
+            margin-bottom: 25px;
+        }
 
-    }
+        #logo {
+            background: url(assets/logo.png) left top repeat-y;
+            height: 50px;
+            width: 450px;
+        }
 
-    .header{
-        margin-top: 10px;
-    }
+        .bodyContainer {
+            width: 950px;
+            margin: 0 auto;
+        }
 
-    #sub-header
-    {
-        height: 29px;
-        position: relative;
-        overflow: hidden;
-        margin-right: auto;
-        margin-left: auto;
+        #sub-header {
+            height: 29px;
+            overflow: hidden;
+            background: #4c4c4c;
+        }
 
-        z-index: 100;
+        #sub-header a:hover .sub-header-item {
+            background-color: #c90;
+        }
 
-        background: #4c4c4c;
-    }
+        .sub-header-item {
+            float: left;
+            border-right: 1px solid #8C8C8C;
+            color: #fff;
+            height: 28px;
+            padding: 7px 16px 5px 16px;
+            text-transform: uppercase;
+        }
 
-    .sub-header-item
-    {
-        float: left;
-        border-right: 1px solid #444;
-        color: rgb(255,255,255);
-        height: 28px;
-        margin-bottom: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
-        padding-bottom: 5px;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 7px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        border-bottom-color: rgb(128, 128, 128);
-        border-bottom-width: 0px;
-        border-collapse: separate;
-        border-left-color: rgb(128, 128, 128);
-        border-left-width: 0px;
-        border-right-color: rgb(140, 140, 140);
-        border-right-style: solid;
-        border-right-width: 1px;
-        border-top-color: rgb(128, 128, 128);
-        border-top-width: 0px;
-        text-decoration: none;
-        text-transform: uppercase;
-        white-space: nowrap;
+        .page-title {
+        	background-color: #E2E3E5;
+        	border-bottom: #d5d6d6 1px solid;
+        	border-top: #FFFFFF 1px solid;
+        	color: #FF4F00;
+        	font: 21px Verdana, Arial, Sans-Serif;
+        	height: 33px;
+        	margin: 0px 0px 2px 0px;
+        	padding: 8px 3px 3px 11px;
+        }
 
-    }
+        #categoryList ul {
+            list-style: none;
+            color: #FF4F00;
+        }
 
-    #sub-header a:hover .sub-header-item
-    {
-        background-color: #444;
-        color: #eee;
-    }
+        .nav-anchor:link,
+        .nav-anchor:visited,
+        .nav-anchor:active {
+            text-decoration: none;
+            color: #FF4F00;
+            text-transform: capitalize;
+            font-size: 1.25em;
+            margin-bottom: 3px;
+            line-height: 1.8em;
+        }
 
-    #non-scrolling-section
-    {
-    /*    position: fixed;*/
-        z-index: 500;
-        height: 100px;
-        width:100%;
-        background-color:white;
+        .nav-anchor:hover {
+            text-decoration: underline;
+        }
 
-    }
+        #content-repos {
+            width: 645px;
+            color: rgb(78, 80, 84);
+            font-family: calibri;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-smoothing: antialiased;
+            float: right;
+            clear: both;
+        }
 
-    #scrolling-section
-    {
-        position: relative;
-        overflow: auto;
+        #content-repos a:link {
+            color: #0072BC;
+            text-decoration: none;
+        }
 
-        padding-top: 10px;
-        bottom: 0;
-    }
+        #content-repos a:visited {
+            text-decoration: none;
+        }
 
-    .non-scrolling-sidebar
-    {
-        position: fixed;
-    }
+        #content-repos a:hover {
+            text-decoration: underline;
+        }
 
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 12px;
-    }
+        #content-repos a:hover,
+        #content-repos a:visited {
+            color: #6B0014
+        }
 
-    h1{
-        font-size: 28px !important;
-        font-weight: normal !important;
-        color: #0e5470 !important;
-        font-family: Arial, Helvetica, sans-serif !important;
-    }
+        #content-repos .category-anchor:link,
+        #content-repos .category-anchor:visited,
+        #content-repos .category-anchor:active,
+        #content-repos .category-anchor:hover {
+            text-decoration: none;
+            color: rgb(78, 80, 84);
+        }
 
-    h2
-    {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #65bccd;
-        font-size: 28px !important;
-        font-weight: normal !important;
-        margin:5px 0px;
-    }
+        .searchInput {
+            border: 1px solid #d5d6d6;
+            font-size: 11px;
+            height: 21px;
+            padding: 0 6px;
+            margin-top: -10px;
+        }
 
-    .repo-list-item-container
-    {
-        margin: 10px 10px 20px;
-        background-color: white;
-        box-shadow: 0px 0px 10px #aaa;
-        border: 1px solid #999;
-        padding: 15px 20px 20px;
-        cursor: pointer;
-        width: 325px;
-        float:left;
-        height:189px;
-    }
+        .searchInput:focus {
+            outline: none;
+        }
 
-    .repo-list-item-container:hover {
-        border-color: #0e5470;
-        box-shadow: 0px 0px 10px #b11f24;
-    }
+        .repo-list-item-container {
+            margin: 10px 10px 20px;
+            box-shadow: 1px 1px 1px #aaa;
+            border: 1px solid #999;
+            padding: 20px;
+        }
 
-    .repo-list-item-anchor:link, .repo-list-item-anchor:visited, .repo-list-item-anchor:active
-    {
-        text-decoration: none;
-        color: #0e5470;
-        font-weight: bold;
-        text-transform: capitalize;
-        font-size: 1.25em;
-        margin-bottom: 3px;
-        line-height: 1.8em;
-    }
+        #content-repos a.repo-list-item-anchor:link,
+        #content-repos a.repo-list-item-anchor:visited,
+        #content-repos a.repo-list-item-anchor:active {
+            color: #FF4F00;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 1.25em;
+            margin-bottom: 3px;
+        }
 
-    .repo-list-item-description
-    {
-        margin-bottom: 8px;
-        font-style: italic;
+        #content-repos a.repo-list-item-anchor:hover {
+            text-decoration: underline;
+        }
 
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height:90px;
-    }
+        .repo-list-item-description {
+            margin-bottom: 8px;
 
-    .repo-list-item-label
-    {
-        float: left;
-        width: 100px;
-        font-weight:bold;
-    }
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 90px;
+        }
 
-    .repo-list-item-value
-    {
-        clear: both;
-    }
+        .repo-list-item-label {
+            float: left;
+            width: 100px;
+            font-weight: bold;
+        }
 
+        .repo-list-item-value {
+            clear: both;
+        }
 
-     .category {
-        float: left;
-        clear: both;
-        margin-bottom: 10px;
-    }
-
-    .category {
-        margin-bottom: 30px;
-        width:90%
-    }
-
-    #content-repos {
-        width: 74%;
-        min-width: 700px;
-        float: right;
-        clear: both;
-    }
-
-    #content-sidebar {
-        width: 190px;
-        position: relative;
-        float: left;
-        padding-top: 10px;
-        padding-right: 3.0em;
-        line-height: 1.5em;
-        font-size: 90%;
-        color: #444;
-        padding-left: 10px;
-    }
-
-    #scrolling-section{
-        background: url(../assets/background-column.png) left top repeat-y;
-    }
-
-    #logo{
-        background: url(../assets/logo.png) left top repeat-y;
-        height: 50px;
-        width: 450px;
-    }
-
-
-    .nav-anchor:link, .nav-anchor:visited, .nav-anchor:active
-    {
-        text-decoration: none;
-        color: #0e5470;
-        font-weight: bold;
-        text-transform: capitalize;
-        font-size: 1.25em;
-        margin-bottom: 3px;
-        line-height: 1.8em;
-    }
-
-    #categoryList {
-        padding-left:10px;
-    }
-
-    .category-anchor:link, .category-anchor:visited, .category-anchor:active {
-        text-decoration: none;
-    }
-
-    label {
-        display:block;
-        font-style:italic;
-    }
-
-    .searchInput {
-        width:2 00px;
-        border: 2px solid #dadada;
-        border-radius: 7px;
-        font-size: 14px;
-        padding: 5px;
-        margin-top: -10px;
-    }
-
-    .searchInput:focus {
-        outline: none;
-        border-color: #0e5470;
-        box-shadow: 0px 0px 10px #B9090B;
-    }
-
-    .projectsHeader {
-        float: left;
-    }
-
-    .search {
-        float: left;
-        margin-left: 30px;
-        margin-top: 30px;
-    }
-
-    @media screen and (min-width: 1050px) {
         .category {
-            width:95%
+            float: left;
+            clear: both;
+            margin-bottom: 30px;
+            width: 90%
         }
 
-    }
-    @media screen and (min-width: 1400px) {
-        .category {
-            width:90%
-        }
-    }
-
-    @media screen and (max-width: 1050px) {
-        .non-scrolling-sidebar {
-            display:none
+        .projectsHeader {
+            float: left;
         }
 
-        #scrolling-section{
-            background:url()
+        .search {
+            float: left;
+            margin-left: 30px;
+            margin-top: 30px;
         }
-
-        .bodyContainer{
-            margin: 0px 0px !important
-            width:100%;
-        }
-
-
-        #content-repos{
-            min-width:100px;
-            width:90%;
-        }
-    }
-
     </style>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.dotdotdot.min.js"></script>
     <script type="text/javascript" src="js/jquery-dateFormat.min.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/categories.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
-
 </head>
 
 <body>
-    <div id="non-scrolling-section">
-        <div class="bodyContainer header">
+    <div class="bodyContainer">
+        <div id="header">
             <div class="header-logo">
-                <a href="http://developer.inin.com"><div id='logo'></div></a>
+                <a href="http://developer.inin.com">
+                    <div id='logo'></div>
+                </a>
             </div>
+            <div id="sub-header"></div>
         </div>
-        <div id="sub-header" class="bodyContainer"></div>
-    </div>
-    <div id="scrolling-section" class='bodyContainer'>
+        <div class="page-title">
+            Open Source
+        </div>
         <div id="content-repos">
-            <div id="tab-content-home" >
-                <p>
-                    The Interactive Intelligence Developer Portal has open source projects available for reference or for the development community to fork, extend, and enhance. The organization can be found at <a href="https://github.com/InteractiveIntelligence/">https://github.com/InteractiveIntelligence/</a>.
-                </p>
-                <p>
-                    Here you will be able to find simple example projects as well as complete applications. These projects are hosted under the <a href="http://www.mozilla.org/MPL/2.0/">Mozilla Public License 2.0</a>  license​ which means that all code can be used in other open source or closed source projects as well as free and paid applications.
-                </p>
+            <p>
+                The Genesys Developer Portal has open source projects available for reference or for the development community to fork, extend, and enhance. The organization can be found at <a href="https://github.com/InteractiveIntelligence/">https://github.com/InteractiveIntelligence/</a>.
+            </p>
+            <p>
+                Here you will be able to find simple example projects as well as complete applications. These projects are hosted under the <a href="http://www.mozilla.org/MPL/2.0/">Mozilla Public License 2.0</a> license​ which means that all code
+                can be used in other open source or closed source projects as well as free and paid applications.
+            </p>
 
-                <h1>Contributing</h1>
-                <p>
-                    Community contributions to open source projects is strongly encouraged. First step is to get a free account on GitHub and become familiar with some of the basics of git. Next create a fork of the project you want to work on. GitHub has a good tutorial on <a href="https://help.github.com/articles/fork-a-repo">how to fork a repo</a>. Make any necessary changes in your repo and when you are ready to have those changes integrated back into the main repository, issue a pull request. GitHub again has a good tutorial on <a href="https://help.github.com/articles/creating-a-pull-request">how to create a pull request​</a>.
-                </p>
+            <h1>Contributing</h1>
+            <p>
+                Community contributions to open source projects is strongly encouraged. First step is to get a free account on GitHub and become familiar with some of the basics of git. Next create a fork of the project you want to work on. GitHub has a good tutorial
+                on <a href="https://help.github.com/articles/fork-a-repo">how to fork a repo</a>. Make any necessary changes in your repo and when you are ready to have those changes integrated back into the main repository, issue
+                a pull request. GitHub again has a good tutorial on <a href="https://help.github.com/articles/creating-a-pull-request">how to create a pull request​</a>.
+            </p>
 
-                <div class = "projectsHeader">
-                    <h1>Projects</h1>
-                </div>
-
-                <div class = "search">
-                    <input class="searchInput" placeholder="Search Projects">
-                </div>
-
-                <div id="categories"></div>
+            <div class="projectsHeader">
+                <h1>Projects</h1>
             </div>
-        </div>
-        <div id='content-sidebar' >
 
+            <div class="search">
+                <input class="searchInput" placeholder="Search Projects">
+            </div>
+
+            <div id="categories"></div>
         </div>
 
-        <div class="non-scrolling-sidebar">
-            <div id="categoryList" class="">
-            </div>
+        <div id="categoryList">
         </div>
     </div>
 </body>
+
 </html>
