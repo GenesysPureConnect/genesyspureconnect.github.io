@@ -75,7 +75,7 @@ $(function(){
     buildTabs();
 
     $.ajax({
-        url: "https://api.github.com/orgs/interactiveintelligence/repos",
+        url: "https://api.github.com/orgs/GenesysPureConnect/repos",
     })
     .done(function( data ) {
 
