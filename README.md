@@ -1,4 +1,4 @@
-interactiveintelligence.github.io
+genesyspureconnect.github.io
 =================================
 
 GitHub pages site
